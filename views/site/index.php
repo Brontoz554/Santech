@@ -17,7 +17,7 @@ $this->title = 'My Yii Application';
 
 <section class="plumber-block">
     <article class="plumber-text">
-        <h1>Услуги сантехника в Томской области</h1>
+        <h1>Услуги сантехника</h1>
         <span>
                 Поломки сантехнического оборудования дело не частое,
                 и доверять своё оборудование стоит только профессионалам. <br>
@@ -33,7 +33,12 @@ $this->title = 'My Yii Application';
 
                 $form = ActiveForm::begin() ?>
                 <?= $form->field($modal, 'name')->textInput() ?>
-                <?= $form->field($modal, 'phone')->textInput() ?>
+                <?= $form->field($modal, 'phone')->textInput(
+                    [
+                        'placeholder' => '8-123-456-78-91',
+                    ]) ?>
+                <?= $form->field($modal, 'comment')->textarea(['rows' => 8]) ?>
+
                 <?= Html::submitButton('Оставить заявку', ['class' => 'modal-btn']) ?>
                 <?php ActiveForm::end();
 
@@ -69,5 +74,22 @@ $this->title = 'My Yii Application';
                 fugiat nulla pariatur.</p>
         </div>
     </div>
+</section>
+<section class="question-block container">
+    <article class="question-detail">
+        <h2>Сомниваетесь или остались какие либо вопросы?</h2>
+        <h3>Укажите ваш номер телефона и специалист свяжется с вами</h3>
+        <article class="question-form">
+            <?php $form = ActiveForm::begin() ?>
+            <?= $form->field($question, 'name')->textInput() ?>
+            <?= $form->field($question, 'phone')->textInput(
+                [
+                    'placeholder' => '8-123-456-78-91',
+                ]) ?>
+
+            <?= Html::submitButton('Оставить заявку', ['class' => 'question-btn']) ?>
+            <?php ActiveForm::end(); ?>
+        </article>
+    </article>
 </section>
 

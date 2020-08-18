@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Question;
 use app\models\Request;
 use Yii;
 use yii\filters\AccessControl;
@@ -63,7 +64,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $modal = new Request();
-        return $this->render('index', ['modal' => $modal]);
+        $question = new Question();
+        return $this->render('index', [
+            'modal' => $modal,
+            'question' => $question
+        ]);
     }
 
     /**

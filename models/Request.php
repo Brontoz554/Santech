@@ -11,6 +11,7 @@ use yii\db\ActiveRecord;
  * @property int $id
  * @property string $name
  * @property string $phone
+ * @property string $comment
  */
 class Request extends ActiveRecord
 {
@@ -28,9 +29,15 @@ class Request extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'phone'], 'required'],
-            [['name'], 'string', 'max' => 100],
-            [['phone'], 'string', 'max' => 11],
+            [['name', 'phone'], 'required', 'message' => 'Поле обязательно для заполнения'],
+            [
+                ['name'],
+                'string',
+                'max' => 100,
+                'tooShort' => 'Поле должно содержать не больше 100 символов',
+            ],
+            [['phone'], 'string', 'min' => 11, 'max' => 11, 'tooShort' => 'Поле должно содержать 11 символов'],
+            [['comment'], 'string', 'max' => 400, 'tooShort' => 'Поле может содержать максимум 400 символов']
         ];
     }
 
@@ -41,8 +48,9 @@ class Request extends ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Как к вам обращатся',
+            'name' => 'Как к вам обращаться?',
             'phone' => 'Номер телефона',
+            'comment' => 'Что нужно сделать?'
         ];
     }
 
