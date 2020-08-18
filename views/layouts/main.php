@@ -5,6 +5,7 @@
 /* @var $content string */
 
 use app\widgets\Alert;
+use yii\bootstrap\Modal;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -38,7 +39,6 @@ AppAsset::register($this);
     ]);
     ?>
     <section class="section navbar-left">
-        <label class="call-master">Вызов мастера: </label>
         <label class="phone">
             <img src="../../image/phone.svg" alt="phone">
             8-952-805-46-99
@@ -68,14 +68,11 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-    <img src="../../image/main.jpg" alt="plumber" class="plumber-image">
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
+    <?= Breadcrumbs::widget([
+        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+    ]) ?>
+    <?= Alert::widget() ?>
+    <?= $content ?>
 </div>
 
 <footer class="footer">

@@ -4,50 +4,70 @@
 
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
+<?php
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+/* @var $this yii\web\View */
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+use yii\bootstrap\Html;
+use yii\bootstrap\Modal;
+use yii\widgets\ActiveForm;
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+$this->title = 'My Yii Application';
+?>
 
-    <div class="body-content">
+<section class="plumber-block">
+    <article class="plumber-text">
+        <h1>Услуги сантехника в Томской области</h1>
+        <span>
+                Поломки сантехнического оборудования дело не частое,
+                и доверять своё оборудование стоит только профессионалам. <br>
+                Доверьте вашу сантехнику профессионалам - оставьте свою заявку и мастер свяжется с вами.
+            </span>
+        <span class="buttons">
+                <?php
+                Modal::begin([
+                    'toggleButton' => ['label' => 'Оставить заявку'],
+                    'header' => '<h3>Оставьте заявку и мастер свяжется с вами</h3>',
+                    'class' => 'btn btn-dark',
+                ]);
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+                $form = ActiveForm::begin() ?>
+                <?= $form->field($modal, 'name')->textInput() ?>
+                <?= $form->field($modal, 'phone')->textInput() ?>
+                <?= Html::submitButton('Оставить заявку', ['class' => 'modal-btn']) ?>
+                <?php ActiveForm::end();
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+                Modal::end();
+                ?>
+            </span>
+    </article>
+</section>
+<section class="main container col-12">
+    <h2>Наши преимущества</h2>
+    <div class="column">
+        <div class="col-lg-4">
+            <h2>Оплата после приема работ</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.</p>
         </div>
 
+        <div class="col-lg-4">
+            <h2>Система контроля качества</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.</p>
+        </div>
+
+        <div class="col-lg-4">
+            <h2>Работа по договору</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.</p>
+        </div>
     </div>
-</div>
+</section>
+
