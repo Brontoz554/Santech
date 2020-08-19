@@ -47,10 +47,11 @@ $this->title = 'My Yii Application';
             </span>
     </article>
 </section>
-<section class="main container col-12">
+<section class="main container">
     <h2>Наши преимущества</h2>
     <div class="column">
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-12 mt-3">
+            <img src="../../image/pay.png" alt="payment" class="payment">
             <h2>Оплата после приема работ</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -58,7 +59,8 @@ $this->title = 'My Yii Application';
                 fugiat nulla pariatur.</p>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-12 mt-2">
+            <img src="../../image/successfully.png" alt="plumber" class="successfully">
             <h2>Система контроля качества</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -66,8 +68,9 @@ $this->title = 'My Yii Application';
                 fugiat nulla pariatur.</p>
         </div>
 
-        <div class="col-lg-4">
-            <h2>Работа по договору</h2>
+        <div class="col-lg-4 col-md-12 mt-3">
+            <img src="../../image/time.png" alt="plumber" class="time">
+            <h2>Выезд мастера в удобное вам время</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu

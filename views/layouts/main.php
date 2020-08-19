@@ -43,10 +43,6 @@ AppAsset::register($this);
             <img src="../../image/phone.svg" alt="phone">
             8-952-805-46-99
         </label>
-        <label class="phone">
-            <img src="../../image/phone.svg" alt="phone">
-            8-952-805-46-99
-        </label>
     </section>
     <?php
     echo Nav::widget([
