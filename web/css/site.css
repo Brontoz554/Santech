@@ -22,10 +22,12 @@ body {
 }
 
 .footer {
-    height: 60px;
-    background-color: #f5f5f5;
+    background-color: #1a293b;
     border-top: 1px solid #ddd;
+    margin-top: 100px;
     padding-top: 20px;
+    color: white !important;
+    font-size: 16px;
 }
 
 .jumbotron {
@@ -251,7 +253,7 @@ a.navbar-brand {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
-    background: #ffcb05 !important;
+    background: #1894c9 !important;
     box-shadow: 1px 2px 3px gray;
     text-shadow: 1px 2px 3px gray;
 }
@@ -263,7 +265,7 @@ a.navbar-brand {
 }
 
 .modal-btn:hover, .modal-btn:focus, .modal-btn:active {
-    background: #1894c9 !important;
+    background: #1d789f !important;
 }
 
 .modal-header {
@@ -314,10 +316,16 @@ a.navbar-brand {
 }
 
 .question-detail {
-    background: url("../../image/question.jpg") center center;
+    background: url("../../image/question.jpg") center center no-repeat;
+    object-fit: contain;
     width: 100%;
     min-height: 225px;
     text-align: left;
+    box-shadow: 1px 1px 3px gray;
+}
+
+.question-detail h2, .question-detail h3 {
+    padding-left: 15px;
 }
 
 #w2 {
@@ -345,12 +353,12 @@ a.navbar-brand {
     letter-spacing: 1px;
     padding: 16px 12px;
     width: 30%;
-    font-weight: 600;
     transition: .3s;
 }
 
 .question-btn:hover {
     box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+    background: #1d789f;
 }
 
 h1 {
@@ -367,6 +375,131 @@ h1 {
     height: 60px;
 }
 
-div.form-group.field-question-name.required {
+.heating_system, .waterfall, .sewerage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay, color;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    box-shadow: 0 0 5px gray;
+}
 
+.waterfall {
+    background-image: linear-gradient(135deg, #213147, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #213147, rgba(255, 255, 255, .1)),
+    url("../../image/waterfall.jpg");
+}
+
+.heating_system {
+    background-image: linear-gradient(135deg, #213147, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #213147, rgba(255, 255, 255, .1)),
+    url("../../image/heating_system.jpg");
+}
+
+.sewerage {
+    background-image: linear-gradient(135deg, #213147, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #213147, rgba(255, 255, 255, .1)),
+    url("../../image/sewerage.jpg");
+}
+
+.information-block h2 {
+    text-shadow: 1px 0 10px black;
+    color: white;
+}
+
+.more {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.category-name {
+    background: #1a293b;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.category-name > h2 {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.service-one {
+    align-items: center;
+    justify-content: center;
+}
+
+.col-lg-4.col-md-12.mt-3 > p, .col-lg-4.col-md-12 > p {
+    font-size: 20px;
+}
+
+.pull-right {
+    padding: 15px 15px 15px 0;
+}
+
+@media (max-width: 768px) {
+    #w2 {
+        flex-direction: column;
+    }
+
+    .question-block .form-group {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .question-detail {
+        background: linear-gradient(35deg, #7693b3, rgba(0, 0, 0, 0.03));
+    }
+
+    .question-btn, .question-detail > h2, .question-detail > h3 {
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 1px 1px 4px #4e4a4a;
+        color: white;
+        padding: 0;
+    }
+
+    .question-detail .control-label {
+        text-shadow: 1px 1px 2px #4e4a4a;
+        color: white;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    .question-btn {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .successfully {
+        margin-top: 50px;
+    }
+
+    #question-phone, #question-name {
+        padding: 25px;
+    }
+
+    .icon-bar {
+        background: white;
+    }
+
+    .navbar-collapse.collapse.in .section {
+        display: block;
+    }
+
+    .navbar-collapse.collapse.in label.phone {
+        transition: .3s;
+        padding-left: 0;
+    }
 }

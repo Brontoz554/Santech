@@ -31,7 +31,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Сантехник',
+        'brandLabel' => 'Экспрес-сантехник',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-dark navbar-fixed-top',
@@ -73,9 +73,11 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+            <label class="phone">
+                <img src="../../image/phone.svg" alt="phone">
+                8-952-805-46-99
+            </label>
+        <p class="pull-right">&copy; express-santehnik</p>
     </div>
 </footer>
 

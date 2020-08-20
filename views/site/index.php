@@ -28,6 +28,7 @@ $this->title = 'My Yii Application';
                 Modal::begin([
                     'toggleButton' => ['label' => 'Оставить заявку'],
                     'header' => '<h3>Оставьте заявку и мастер свяжется с вами</h3>',
+                    'footer' => 'Вы можете сразу позвонить нам: 8-888-888-88-88',
                     'class' => 'btn btn-dark',
                 ]);
 
@@ -53,31 +54,51 @@ $this->title = 'My Yii Application';
         <div class="col-lg-4 col-md-12 mt-3">
             <img src="../../image/pay.png" alt="payment" class="payment">
             <h2>Оплата после приема работ</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.</p>
+            <p>Оплата выполненных мастером работ производится только после приёма работы.</p>
         </div>
-
         <div class="col-lg-4 col-md-12 mt-2">
             <img src="../../image/successfully.png" alt="plumber" class="successfully">
-            <h2>Система контроля качества</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.</p>
+            <h2>Только опытные и квалифицированные мастера</h2>
+            <p>Наши мастера проверены временем и способны выполнять работы любых сложностей.
+                За плечами каждого из них больше 1000 выполненных работ.</p>
         </div>
 
         <div class="col-lg-4 col-md-12 mt-3">
             <img src="../../image/time.png" alt="plumber" class="time">
             <h2>Выезд мастера в удобное вам время</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.</p>
+            <p>Вы указываете удобное вам время и мастер прибудет точно в определённый срок.</p>
         </div>
     </div>
 </section>
+<section class="information-block container">
+    <div class="column">
+        <div class="service-one">
+            <article class="col-lg-4 col-md-12 mt-3">
+                <div class="waterfall">
+                </div>
+                <div class="category-name">
+                    <h2>Установка водоснабжения</h2>
+                </div>
+            </article>
+
+            <article class="col-lg-4 col-md-12 mt-3">
+                <div class="heating_system">
+                </div>
+                <div class="category-name">
+                    <h2>Монтаж систем отопления, опрессовка зданий</h2>
+                </div>
+            </article>
+        </div>
+        <article class="col-lg-4 col-md-12 mt-3">
+            <div class="sewerage">
+            </div>
+            <div class="category-name">
+                <h2>Канализационные работы</h2>
+            </div>
+        </article>
+    </div>
+</section>
+
 <section class="question-block container">
     <article class="question-detail">
         <h2>Сомниваетесь или остались какие либо вопросы?</h2>
