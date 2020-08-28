@@ -2,15 +2,13 @@
 
 namespace app\controllers;
 
+use alexeevdv\sms\ru\Sms;
 use app\models\Question;
 use app\models\Request;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
 class SiteController extends Controller
 {
@@ -65,71 +63,97 @@ class SiteController extends Controller
     {
         $modal = new Request();
         $question = new Question();
+
+        if ($modal->load(Yii::$app->request->post()) && $modal->validate()) {
+            $modal->save();
+            $response = $this->sendMessage($modal);
+
+            if ($response->code == 100) {
+                Yii::$app->session->setFlash('success',
+                    'Ваша заявка успешно отправлена, мастер скоро свяжется с вами');
+                return $this->redirect('/');
+            }
+        }
+
+
         return $this->render('index', [
             'modal' => $modal,
             'question' => $question
         ]);
     }
 
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
+    public function actionError()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+        return $this->render('error');
+    }
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
+//    /**
+//     * Login action.
+//     *
+//     * @return Response|string
+//     */
+//    public function actionLogin()
+//    {
+//        if (!Yii::$app->user->isGuest) {
+//            return $this->goHome();
+//        }
+//
+//        $model = new LoginForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+//            return $this->goBack();
+//        }
+//
+//        $model->password = '';
+//        return $this->render('login', [
+//            'model' => $model,
+//        ]);
+//    }
 
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+//    /**
+//     * Logout action.
+//     *
+//     * @return Response
+//     */
+//    public function actionLogout()
+//    {
+//        Yii::$app->user->logout();
+//
+//        return $this->goHome();
+//    }
+
+
+    /**
+     * @param $modal
+     * @return mixed
+     */
+    public function sendMessage($modal)
+    {
+        return \Yii::$app->sms->send(new Sms([
+            "to" => "89528054699",
+            "text" => self::configurationTextMessageFromRequest(
+                $modal->name,
+                $modal->comment,
+                $modal->phone,
+                $modal->id
+            ),
+        ]));
     }
 
     /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
+     * @param string $name
+     * @param string $comment
+     * @param string $phone
+     * @param integer $id
      * @return string
      */
-    public function actionAbout()
+    public function configurationTextMessageFromRequest($name, $comment = "Пусто", $phone, $id)
     {
-        return $this->render('about');
+        return
+            'Номер заявки' . $id . PHP_EOL .
+            'Имя: ' . $name . PHP_EOL .
+            'Номер телефона: ' . $phone . PHP_EOL .
+            'Комментарий: ' . $comment . PHP_EOL .
+            'Дата: ' . date('Y-m-d H:m');
     }
+
 }

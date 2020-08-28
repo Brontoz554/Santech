@@ -3,10 +3,13 @@
     src: url("../../fonts/RobotoSlab-VariableFont_wght.ttf");
 }
 
+.fade.modal.in {
+    z-index: 9999999999;
+}
+
 html,
 body {
     height: 100%;
-    font-family: RobotoSlab;
     max-width: 2048px;
 }
 
@@ -22,11 +25,10 @@ body {
 }
 
 .footer {
-    background-color: #1a293b;
-    border-top: 1px solid #ddd;
-    margin-top: 100px;
+    background-color: #333641;
+    height: 60px;
     padding-top: 20px;
-    color: white !important;
+    color: #d5d7d5 !important;
     font-size: 16px;
 }
 
@@ -105,6 +107,21 @@ a.desc:after {
     border: none;
 }
 
+.form-group.field-question-phone input, .form-group.field-question-name input {
+    height: 62px;
+    font-size: 20px;
+}
+
+.form-group.field-question-phone > label, .form-group.field-question-name > label {
+    font-weight: normal;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.question-form .help-block {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .nav li > form > button.logout {
         display: block;
@@ -124,7 +141,12 @@ a.desc:after {
 }
 
 .navbar-dark {
-    background: #1a293b;
+    background: #3a6392;
+    z-index: 9999999;
+}
+
+.navbar-dark .phone {
+    padding: 15px;
 }
 
 .navbar-dark li a {
@@ -179,7 +201,6 @@ a.desc:after {
 }
 
 .phone, .call-master {
-    padding: 15px 15px;
     margin: 0;
     font-weight: normal;
 }
@@ -264,6 +285,10 @@ a.navbar-brand {
     font-size: 20px;
 }
 
+textarea#request-comment {
+    font-size: 20px;
+}
+
 .modal-btn:hover, .modal-btn:focus, .modal-btn:active {
     background: #1d789f !important;
 }
@@ -316,12 +341,13 @@ a.navbar-brand {
 }
 
 .question-detail {
-    background: url("../../image/question.jpg") center center no-repeat;
-    object-fit: contain;
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 100%;
-    min-height: 225px;
-    text-align: left;
-    box-shadow: 1px 1px 3px gray;
+    background: #466492;
+    box-shadow: 0 0 3px gray;
+    text-shadow: 0 0 1px #164183;
+    color: whitesmoke;
 }
 
 .question-detail h2, .question-detail h3 {
@@ -335,6 +361,7 @@ a.navbar-brand {
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    align-self: center;
 }
 
 .question-block .form-group {
@@ -354,6 +381,7 @@ a.navbar-brand {
     padding: 16px 12px;
     width: 30%;
     transition: .3s;
+    margin-top: 10px;
 }
 
 .question-btn:hover {
@@ -375,41 +403,53 @@ h1 {
     height: 60px;
 }
 
-.heating_system, .waterfall, .sewerage {
+.heating_system, .waterfall, .sewerage, .repair, .high-level {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 350px;
+    height: 350px;
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay, color;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
-    box-shadow: 0 0 5px gray;
 }
 
 .waterfall {
-    background-image: linear-gradient(135deg, #213147, rgba(255, 255, 255, .1)),
-    linear-gradient(45deg, #213147, rgba(255, 255, 255, .1)),
+    background-image: linear-gradient(135deg, #606617, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #466492, rgba(255, 255, 255, 0.1)),
     url("../../image/waterfall.jpg");
 }
 
 .heating_system {
-    background-image: linear-gradient(135deg, #213147, rgba(255, 255, 255, .1)),
-    linear-gradient(45deg, #213147, rgba(255, 255, 255, .1)),
+    background-image: linear-gradient(135deg, #606617, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #466492, rgba(255, 255, 255, .1)),
     url("../../image/heating_system.jpg");
 }
 
 .sewerage {
-    background-image: linear-gradient(135deg, #213147, rgba(255, 255, 255, .1)),
-    linear-gradient(45deg, #213147, rgba(255, 255, 255, .1)),
+    background-image: linear-gradient(135deg, #606617, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #466492, rgba(255, 255, 255, .1)),
     url("../../image/sewerage.jpg");
+}
+
+.repair {
+    background-image: linear-gradient(135deg, #606617, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #466492, rgba(255, 255, 255, .1)),
+    url("../../image/remont-santekhniki.jpg");
+}
+
+.high-level {
+    background-image: linear-gradient(135deg, #606617, rgba(255, 255, 255, .1)),
+    linear-gradient(45deg, #466492, rgba(255, 255, 255, .1)),
+    url("../../image/santehnika2.jpg");
 }
 
 .information-block h2 {
     text-shadow: 1px 0 10px black;
     color: white;
+    padding-bottom: 50px;
 }
 
 .more {
@@ -420,9 +460,13 @@ h1 {
 }
 
 .category-name {
-    background: #1a293b;
+    height: 130px;
+    background: #466492;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .category-name > h2 {
@@ -441,11 +485,42 @@ h1 {
     font-size: 20px;
 }
 
-.pull-right {
-    padding: 15px 15px 15px 0;
+.hover {
+    transition: .3s;
+}
+
+.hover:hover {
+    transform: scale(1.1, 1.1);
+    z-index: 999999;
+    transition: .3s;
+}
+
+.more-info {
+    font-size: 25px;
+}
+
+.alert {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 30%;
 }
 
 @media (max-width: 768px) {
+    .alert {
+        right: 10%;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .hover:hover {
+        transform: scale(1);
+    }
+
+    .question-detail h2 {
+        padding-left: 0;
+    }
+
     #w2 {
         flex-direction: column;
     }
@@ -457,7 +532,7 @@ h1 {
     }
 
     .question-detail {
-        background: linear-gradient(35deg, #7693b3, rgba(0, 0, 0, 0.03));
+        background: linear-gradient(35deg, #466492, rgb(137, 227, 214));
     }
 
     .question-btn, .question-detail > h2, .question-detail > h3 {
@@ -502,4 +577,16 @@ h1 {
         transition: .3s;
         padding-left: 0;
     }
+}
+
+.pnf {
+    width: 50%;
+}
+
+.site-error {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

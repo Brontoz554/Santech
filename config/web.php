@@ -49,6 +49,10 @@ $config = [
             'rules' => [
             ],
         ],
+        "sms" => [
+            "class" => "alexeevdv\\sms\\ru\\Client",
+            "api_id" => "5708D5FA-D304-F64A-25C4-E9F513B9334D",
+        ],
     ],
     'params' => $params,
     'language' => 'Russian',

@@ -14,9 +14,9 @@ class m200818_161104_create_request_table extends Migration
     {
         $this->createTable('{{%request}}', [
             'id' => $this->primaryKey(),
-            'phone' => $this->string('11')->notNull(),
+            'phone' => $this->string('30')->notNull(),
             'name' => $this->string('120')->notNull(),
-            'comment' => $this->string('400')->defaultValue('Описание не указано'),
+            'comment' => $this->string('400')->null(),
         ]);
     }
 

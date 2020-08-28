@@ -23,6 +23,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" href="../../image/plumber.png" type="image/x-icon"/>
     <?php $this->head() ?>
 </head>
 <body>
@@ -41,26 +42,26 @@ AppAsset::register($this);
     <section class="section navbar-left">
         <label class="phone">
             <img src="../../image/phone.svg" alt="phone">
-            8-952-805-46-99
+            8-909-544-34-44
         </label>
     </section>
     <?php
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            Yii::$app->user->isGuest ? (
-            ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
+//        'items' => [
+//            Yii::$app->user->isGuest ? (
+//            ['label' => 'Login', 'url' => ['/site/login']]
+//            ) : (
+//                '<li>'
+//                . Html::beginForm(['/site/logout'], 'post')
+//                . Html::submitButton(
+//                    'Logout (' . Yii::$app->user->identity->username . ')',
+//                    ['class' => 'btn btn-link logout']
+//                )
+//                . Html::endForm()
+//                . '</li>'
+//            )
+//        ],
     ]);
     NavBar::end();
     ?>
@@ -72,11 +73,11 @@ AppAsset::register($this);
 </div>
 
 <footer class="footer">
-    <div class="container">
-            <label class="phone">
-                <img src="../../image/phone.svg" alt="phone">
-                8-952-805-46-99
-            </label>
+    <div class="container footer-items">
+        <label class="phone">
+            <img src="../../image/phone.svg" alt="phone">
+            8-909-544-34-44
+        </label>
         <p class="pull-right">&copy; express-santehnik</p>
     </div>
 </footer>
